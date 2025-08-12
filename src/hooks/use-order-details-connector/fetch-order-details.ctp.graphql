@@ -1,5 +1,18 @@
 query FetchOrderDetails($id: String!) {
   order(id: $id) {
+    id
     orderNumber
+    createdAt
+    totalPrice {
+      centAmount
+      currencyCode
+    }
+    paymentInfo {
+      payments {
+        paymentMethodInfo {
+          method
+        }
+      }
+    }
   }
 }

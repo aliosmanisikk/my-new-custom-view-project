@@ -12470,7 +12470,25 @@ export type TFetchOrderDetailsQuery = {
   __typename?: 'Query';
   order?: {
     __typename?: 'Order';
+    id: string;
     orderNumber: string;
+    createdAt: string;
+    totalPrice: {
+      __typename?: 'BaseMoney';
+      centAmount: number;
+      currencyCode: string;
+    };
+    paymentInfo?: {
+      __typename?: 'PaymentInfo';
+      payments: Array<{
+        __typename?: 'Payment';
+        id: string;
+        paymentMethodInfo?: {
+          __typename?: 'PaymentMethodInfo';
+          method: string;
+        } | null;
+      }>;
+    };
   } | null;
 };
 
