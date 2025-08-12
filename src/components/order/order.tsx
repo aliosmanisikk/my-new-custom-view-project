@@ -8,31 +8,29 @@ import Text from '@commercetools-uikit/text';
 import { useOrderDetailsFetcher } from '../../hooks/use-order-details-connector';
 import { getErrorMessage } from '../../helpers';
 import messages from './messages';
-import { useLocation } from 'react-router-dom';
 
 const Order = () => {
   const intl = useIntl();
-  const { user } = useCustomViewContext(
+  const { user, hostUrl } = useCustomViewContext(
     (context) => {
         console.log(context)
         return {
           user: context.user,
           dataLocale: context.dataLocale,
           projectLanguages: context.project?.languages,
+          hostUrl: context.hostUrl,
         }
       }
   );
-  const location = useLocation();
 
   let orderId: string | null = null;
-  const match = location.pathname.match(/\/orders\/([^/]+)/);
+  const match = hostUrl.match(/\/orders\/([^/]+)/);
   if (match) {
     orderId = match[1];
   }
 
 
   const { result, error, loading } = useOrderDetailsFetcher(orderId || "");
-
 
 
   if (error) {
