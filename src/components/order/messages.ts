@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   title: {
     id: 'Order.title',
-    defaultMessage: 'Order list',
+    defaultMessage: 'Order details',
   },
   subtitle: {
     id: 'Order.subtitle',
@@ -16,6 +16,6 @@ export default defineMessages({
   },
   noResults: {
     id: 'Order.noResults',
-    defaultMessage: 'There are no Order available in this project.',
+    defaultMessage: 'No order found',
   },
 });

@@ -8,6 +8,7 @@ import Text from '@commercetools-uikit/text';
 import { useOrderDetailsFetcher } from '../../hooks/use-order-details-connector';
 import { getErrorMessage } from '../../helpers';
 import messages from './messages';
+import Grid from '@commercetools-uikit/grid';
 
 const Order = () => {
   const intl = useIntl();
@@ -71,8 +72,15 @@ const Order = () => {
 
       {result ? (
         <Spacings.Stack scale="l">
-
-        <Text.Headline as="h2" intlMessage={messages.title} />
+          
+            <Grid
+              gridGap="16px"
+              gridAutoColumns="1fr"
+              gridTemplateColumns="repeat(2, 1fr)"
+            >
+              <Text.Body>{'Order number'}</Text.Body>
+              <Text.Body>{result.orderNumber}</Text.Body>
+            </Grid>
 
         </Spacings.Stack>
       ) : null}
