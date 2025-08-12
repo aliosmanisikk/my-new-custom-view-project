@@ -84,6 +84,8 @@ const Order = () => {
               <Text.Body>{result.orderNumber}</Text.Body>
               <Text.Body>{'Payment method'}</Text.Body>
               <Text.Body>{result.paymentInfo?.payments[0].paymentMethodInfo?.method}</Text.Body>
+              <Text.Body>{'SAP invoice'}</Text.Body>
+              <Text.Body>TO DO</Text.Body>
             </Grid>
 
         </Spacings.Stack>
