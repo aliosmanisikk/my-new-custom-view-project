@@ -1,0 +1,5 @@
+query FetchOrderDetails($id: String!) {
+  order(id: $id) {
+    orderNumber
+  }
+}
